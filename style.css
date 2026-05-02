@@ -10,6 +10,12 @@ html {
 
 a {
     text-decoration: none;
+    color:blanchedalmond;
+    background-color:rgb(247, 175, 67)
+}
+
+a:hover {
+    color:white;
 }
 
 ul{
@@ -56,15 +62,7 @@ header {
     display:block;
     padding: 10px 20px;
     border-radius:10px;
-    color:blanchedalmond;
-    background-color:rgb(247, 175, 67)
 }
-
-.lista-menu-superior a:hover {
-    color:rgb(250, 195, 112);
-    color:white;
-}
-
 
 .cuerpo {
     position:static;
@@ -72,59 +70,82 @@ header {
     min-height: 100%;
     min-width: 100%;
     margin-bottom:auto;
+    padding:1%;
 }
 
-.index-lista {
+.navegacion-index-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:20px;
+}
+
+.nav-menu {
     display:flex;
+    align-items: center;
     justify-content:center;
-    justify-content:space-evenly;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    background-size: cover;
+    background-position:center;
 }
 
-.index-lista a {
-    text-decoration: none;
-    color:rgb(255, 214, 127)
+.nav-menu:hover{
+    background-size:250%;
 }
 
-.index-lista a:hover {
-    color:rgb(255, 174, 0)
+.navegacion-index-lista a {
+    text-decoration:none;
+    text-shadow:
+        2px 2px 4px black,
+       -2px 2px 4px black,
+        2px -2px 4px black,
+       -2px -2px 4px black;
+    color:rgb(255, 214, 127);
+    background-color: aliceblue;
 }
 
-.carrusel1 {
-    display:block;
-    align-items:center;
-    margin-top:10%;
-    width: 250%;
-    aspect-ratio: 16 / 9;
-    border-radius:10px;
+.navegacion-index-lista a:hover {
+    color:rgb(255, 174, 0);
+}
+
+
+.nm1 {
     background-image: url("imagenes/pplatos.png");
-    background-size: cover;
-    background-position: center;
 }
 
-.carrusel2 {
-    display:block;
-    align-items:center;
-    margin-top:10%;
-    width: 250%;
-    aspect-ratio: 16 / 9;
-    border-radius:10px;
-    background-image: url("imagenes/splatos.png");
-    background-size: cover;
-    background-position: center;
+.nm2 {
+    background-image: url(imagenes/splatos.png);
 }
 
-.carrusel3 {
-    display:block;
-    align-items:center;
-    margin-top:10%;
-    width: 250%;
-    aspect-ratio: 16 / 9;
-    border-radius:10px;
-    background-image: url("imagenes/postres.png");
-    background-size: cover;
-    background-position: center;
+.nm3 {
+    background-image: url(imagenes/postres.png);
 }
 
+.recetas-recientes {
+    padding-top:1%;
+}
+
+.recetas-recientes h2 {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.recetas-recientes img {
+    max-width: 450px;
+    width:100%;
+    height:100%;
+    border-radius:12px;
+}
+
+.recetas-recientes a {
+    color:rgb(255, 174, 0);
+    background-color:rgb(255, 242, 226);
+}
+
+.recetas-recientes a:hover{
+    color:rgb(192, 127, 41);
+}
 
 footer {
     position:relative;
@@ -135,14 +156,8 @@ footer {
 }
 
 .pedir-receta a {
-    color:blanchedalmond;
-    background-color:rgb(247, 175, 67);
     border-radius:10px;
     margin-top:1%;
-}
-
-.pedir-receta a:hover {
-    color:white;
 }
 
 .pedir-receta {
