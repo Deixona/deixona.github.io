@@ -110,7 +110,7 @@ header {
 
 
 .nm1 {
-    background-image: url("imagenes/pplatos.png");
+    background-image: url(imagenes/pplatos.png);
 }
 
 .nm2 {
@@ -151,7 +151,7 @@ footer {
     position:relative;
     display:block;
     max-height:1%;
-    background-image: url("imagenes/madera-footer.png");
+    background-image: url(imagenes/madera-footer.png);
     background-position:center;
 }
 
