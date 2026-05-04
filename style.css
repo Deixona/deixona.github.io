@@ -1,3 +1,8 @@
+/*-----------Quiero que esto se aplique a toda la página: 
+- Elimino marging y padding por defecto para modificarlo a mi gusto
+- Quito las decoraciones de los enlaces y pongo los colores elegidos para la página
+- Si hace falta cambiar el color de algún enlace se hará en la sección en concreto que lo necesite */
+
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +27,11 @@ ul{
     list-style: none;
 }
 
+
+/*---------------Estos estilos se hicieron teniendo en cuenta el index y se van a reutilizar para toda la página con modificaciones únicamente en el body--------------- */
+
+/* El header es sticky: baja con la rueda del ratón para tener acceso al menú en todo momento */
+/* PENDIENTE CAMBIAR A DISPLAY:GRID PARA QUE SEA RESPONSIVO EN MÓVIL??*/
 header {
     position:sticky;
     display:flex;
@@ -40,6 +50,11 @@ header {
     height:70%;
 }
 
+/* Quiero que al pulsar el logo se vuelva al índice, como tengo un fondo aplicado a los links por defecto se lo quito con transparent */
+.link-logo {
+    background-color:transparent;
+}
+
 .titulo {
     padding-left:20%;
     font-size:larger;
@@ -49,6 +64,8 @@ header {
     justify-content:center;
 }
 
+
+/* Botones superiores derecha - pendientes de cambiar por botón hamburguesa, no me convencen */
 .lista-menu-superior {
     display:flex;
     justify-content:flex-end;
@@ -64,15 +81,17 @@ header {
     border-radius:10px;
 }
 
+/* Estilo general para todo el cuerpo */
 .cuerpo {
     position:static;
     background-color:rgb(255, 234, 209);
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100%;
     margin-bottom:auto;
     padding:1%;
 }
 
+/*Grid para poder colocar los tres botones grandes */
 .navegacion-index-lista {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -89,6 +108,7 @@ header {
     background-position:center;
 }
 
+/*Zoom en la foto del fondo cuando pasas el ratón por encima -- añadir animación si puedo??*/
 .nav-menu:hover{
     background-size:250%;
 }
@@ -154,7 +174,8 @@ header {
     display:grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    align-items: center;
+    align-items: top;
+    
 
     background-color: rgb(255, 248, 238);
     padding: 15px;
@@ -171,7 +192,155 @@ header {
     height: auto;
     border-radius: 12px;
     object-fit: cover;
+    aspect-ratio: 16 / 9;
 }
+
+
+/*--------------------------------------------- */
+
+
+/*---------------------------------------------------------ESTILOS PRIMEROS PLATOS, SEGUNDOS PLATOS Y POSTRES----------------------------------------------- */
+/* Estilos específicos para las páginas de postres, primeros y segundos platos. Se mantiene el formato del index pero las tarjetas son más grandes */
+
+.receta-grande-wrapper {
+    display:grid;
+    gap:3%;
+    margin-bottom:5%;
+}
+.receta-grande {
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+
+    gap: 20px;
+
+    background-color: rgb(255, 248, 238);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+.receta-grande h2 {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.receta-grande:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.receta-grande img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    object-fit:cover;
+}
+
+
+.receta-grande a {
+    color:rgb(255, 174, 0);
+}
+
+.receta-grande a:hover{
+    color:rgb(192, 127, 41);
+}
+
+/*--------------------------------------------- */
+
+/*--------------------------------RECETAS--------------------------------*/
+
+.preparacion {
+    display:grid;
+    grid-template-rows: auto auto;
+    gap:1%;
+}
+
+.preparacion ul {
+    list-style:disc;
+    line-height:120%;
+}
+
+.preparacion h2 {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preparacion-lista {
+    display:grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1fr;
+    margin: 0 auto;
+    background-color: rgb(255, 251, 227);
+    width:80%;
+    border-radius:12px;
+}
+
+.preparacion img {
+    display:block;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 12px;
+}
+
+/*--------------------------------------------- */
+
+/*---------------------PIDE TU RECETA---------------*/
+
+.titulo-pide-receta {
+    padding-top:1%;
+    padding-bottom:1%;
+    display:flex;
+    justify-content: center;
+}
+
+.formulario-wrapper {
+    display:block;
+    width:30%;
+    margin: 0 auto;
+
+    background-color:rgb(255, 251, 227);
+    border-radius:12px;
+}
+
+.formulario {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 200%;
+}
+
+input {
+    padding:10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius:12px;
+    outline:none;
+}
+
+input:focus {
+    border-color: #ff7a00;
+    box-shadow: 0 0 5px rgba(255, 122, 0, 0.3);
+}
+
+button {
+  background-color: #ff7a00;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e66900;
+}
+
+button a {
+    background-color: transparent;
+}
+/*---------------------ESTILOS FOOTER---------------*/
 
 footer {
     position:relative;
@@ -201,3 +370,5 @@ footer {
 .footer-lista img {
     max-height:30px;
 }
+
+/*--------------------------------------------- */
