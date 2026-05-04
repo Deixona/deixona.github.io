@@ -28,20 +28,28 @@ ul{
 }
 
 @media (max-width: 768px) {
-    .titulo h1 {
-        font-size: 1.5rem;
+    .titulo p{
+        display:none;
     }
+}
+
+h1, h2, h3 {
+    font-family: 'Opens Sans', serif;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
 }
 
 /*---------------Estos estilos se hicieron teniendo en cuenta el index y se van a reutilizar para toda la página con modificaciones únicamente en el body--------------- */
 
 /* El header es sticky: baja con la rueda del ratón para tener acceso al menú en todo momento */
-/* PENDIENTE CAMBIAR A DISPLAY:GRID PARA QUE SEA RESPONSIVO EN MÓVIL??*/
 header {
     position:sticky;
     top:0;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    z-index: 1000;
 
 
     background-image: url("imagenes/cabecera.png");
@@ -50,6 +58,7 @@ header {
 }
 
 header img {
+    min-width:100px;
     width:20%;
 }
 
@@ -89,7 +98,23 @@ header img {
     display: flex !important;
 }
 
-/* Quiero que al pulsar el logo se vuelva al índice, como tengo un fondo aplicado a los links por defecto se lo quito con transparent */
+@media (max-width: 768px) {
+    #menu {
+    flex-direction: column;
+    position: absolute;
+    top: 35%;
+    right: 5px;
+    background-color: white;
+    border: 2px solid rgb(247, 175, 67);
+    padding: 4%;
+    gap:7px;
+    z-index: 9999;
+    min-width: 150px;
+    }
+}
+
+/* Quiero que al pulsar el logo se vuelva al índice, 
+como tengo un fondo aplicado a los links por defecto se lo quito con transparent */
 .link-logo {
     background-color:transparent;
 }
@@ -129,11 +154,13 @@ header img {
     border-radius: 12px;
     background-size: cover;
     background-position:center;
+    border-style: groove;
 }
 
-/*Zoom en la foto del fondo cuando pasas el ratón por encima -- añadir animación si puedo??*/
+/*Zoom en la foto del fondo cuando pasas el ratón por encima*/
 .nav-menu:hover{
-    background-size:250%;
+    transform:scale(1.05, 1.05);
+    transition: 0.5s ease;
 }
 
 .navegacion-index-lista a {
@@ -232,6 +259,8 @@ en vertical*/
     background-color: rgb(255, 248, 238);
     padding: 15px;
     border-radius: 12px;
+    border-style: groove;
+    border-color: rgb(255, 214, 127);
 }
 
 .receta:hover {
@@ -277,6 +306,8 @@ en vertical*/
     background-color: rgb(255, 248, 238);
     padding: 15px;
     border-radius: 12px;
+    border-style: groove;
+    border-color:rgb(255, 214, 127);
 }
 
 .receta-grande h2 {
