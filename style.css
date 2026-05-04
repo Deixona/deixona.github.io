@@ -27,6 +27,11 @@ ul{
     list-style: none;
 }
 
+@media (max-width: 768px) {
+    .titulo h1 {
+        font-size: 1.5rem;
+    }
+}
 
 /*---------------Estos estilos se hicieron teniendo en cuenta el index y se van a reutilizar para toda la página con modificaciones únicamente en el body--------------- */
 
@@ -45,7 +50,7 @@ header {
 }
 
 header img {
-    width:15%;
+    width:20%;
 }
 
 .bhamburguesa {
@@ -111,7 +116,8 @@ header img {
 /*Grid para poder colocar los tres botones grandes */
 .navegacion-index-lista {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
     gap:20px;
 }
 
@@ -158,6 +164,21 @@ header img {
     background-image: url(imagenes/postres.png);
 }
 
+
+/* Tres columnas es demasiado grande para pantallas de movil, así que los coloco 
+en vertical con @media y una resolución habitual de móvil*/
+@media (max-width: 768px) {
+    .navegacion-index-lista {
+        grid-template-columns: 1fr; 
+        gap: 15px;
+    }
+
+    .nav-menu {
+        aspect-ratio: 16 / 9; 
+    }
+}
+
+
 .recetas-recientes {
     padding-top:1%;
 }
@@ -176,6 +197,20 @@ header img {
     grid-template-columns: repeat(2, 1fr);
     gap:30px;
     padding:20px;
+}
+
+
+/*Aquí hago lo mismo para ajustar el tamaño, las últimas recetas se muestran de una en una
+en vertical*/
+@media (max-width: 768px) {
+    .navegacion-index-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .recetas-recientes-wrapper {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
 }
 
 .recetas-recientes a {
@@ -204,6 +239,10 @@ header img {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+.receta a {
+    background-color: transparent;
+}
+
 .receta img {
     width: 100%;
     height: auto;
@@ -212,6 +251,11 @@ header img {
     aspect-ratio: 16 / 9;
 }
 
+.receta h3 {
+    display:flex;
+    justify-content:center;
+    align-items:top;
+}
 
 /*--------------------------------------------- */
 
@@ -298,6 +342,26 @@ header img {
     height: auto;
     margin: 0 auto;
     border-radius: 12px;
+}
+
+/*La disposición del texto en pc es demasiado amplia para las pantallas de móvil
+así que opto por disponerlo en vertical: primero los ingredientes y luego los pasos a seguir*/
+@media (max-width: 768px) {
+    .preparacion-lista {
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    .preparacion-lista h2 {
+        padding-top: 5%;
+    }
+    .ingredientes {
+        padding-left:5%;
+    }
+    .pasos {
+        padding-left:5%;
+    }
+    
 }
 
 /*--------------------------------------------- */
