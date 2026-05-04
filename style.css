@@ -34,20 +34,54 @@ ul{
 /* PENDIENTE CAMBIAR A DISPLAY:GRID PARA QUE SEA RESPONSIVO EN MÓVIL??*/
 header {
     position:sticky;
-    display:flex;
     top:0;
-    right:0;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+
     background-image: url("imagenes/cabecera.png");
     background-size:cover;
     background-position: center;
-    height:20vh;
-    justify-content:space-between;
 }
 
-.logo {
-    position:static;
-    display:inline-block;
-    height:70%;
+header img {
+    width:15%;
+}
+
+.bhamburguesa {
+    position:relative;
+    padding-top:1%;
+    padding-right:10%;
+    justify-self: end;
+
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+
+.bhamburguesa a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 10px;
+  border-radius: 12px;
+
+}
+
+#menu {
+    display: none !important; 
+    flex-direction: column;
+    position: absolute;
+    top: 0px;
+    right: 120px;
+    background-color: white;
+    border: 2px solid rgb(247, 175, 67);
+    padding: 4%;
+    gap:7px;
+    z-index: 9999;
+    min-width: 150px;
+}
+
+#menu.mostrar {
+    display: flex !important;
 }
 
 /* Quiero que al pulsar el logo se vuelva al índice, como tengo un fondo aplicado a los links por defecto se lo quito con transparent */
@@ -62,23 +96,6 @@ header {
     flex-direction: column;
     text-align:center;
     justify-content:center;
-}
-
-
-/* Botones superiores derecha - pendientes de cambiar por botón hamburguesa, no me convencen */
-.lista-menu-superior {
-    display:flex;
-    justify-content:flex-end;
-    gap: 10px;
-    padding: 1%;
-    white-space: nowrap;
-    font-size:large;
-}
-
-.lista-menu-superior a {
-    display:block;
-    padding: 10px 20px;
-    border-radius:10px;
 }
 
 /* Estilo general para todo el cuerpo */
@@ -296,7 +313,7 @@ header {
 
 .formulario-wrapper {
     display:block;
-    width:30%;
+    width:50%;
     margin: 0 auto;
 
     background-color:rgb(255, 251, 227);
